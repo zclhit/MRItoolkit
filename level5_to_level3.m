@@ -1,6 +1,6 @@
 % Author: Chenfei Ye upgraded by ZCL
 % 2015-11-21    (2016 Mar)
-%funtion: 将level5下的分割结果回溯到level4 
+%funtion: 将level5下的分割结果回溯到level4
 clc
 clear all;
 close all;  %initialization
@@ -524,7 +524,13 @@ for t=temp1
 end
 img(index)=0;
 
-
+%从1到54排列
+Lables=unique(img);
+for i=1:54
+    temp=Lables(i); %label number
+    index=(img==temp); %index是图像中对应label number的体素序号
+    img(index)=i-1;
+end
 
 CC_286_L=make_ana(img);     %savemat
 
