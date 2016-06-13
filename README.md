@@ -41,3 +41,6 @@ Sorting the output files of Networks of PANDA software.
 
 13.standard_space_sorting.m
 Sorting the standard space output files of PANDA software.
+
+14.level5_to_level3.m
+Change the information of ROIs in JHU T1 286 images into level3, which compact them into 52 regions and  other named 'xxxxx' regions with 0 value in the lookup table.
