@@ -1,12 +1,14 @@
 % Author: Chenfei Ye upgraded by ZCL
 % 2015-11-21    (2016 Mar)
-%funtion: 将level5下的分割结果回溯到level4
+%funtion: 将level5下的分割结果回溯到level3
 clc
 clear all;
 close all;  %initialization
-cd 'E:\ADHKU\NC2_LEVEL5_to_level3test'
+%cd 'F:\ADNI_AD\ADT1SEG\AD16\output'
 % name='Zhuxiaolan';
-[hdr,filetype,fileprefix,machine] = load_nii_hdr(['E:\ADHKU\NC2_LEVEL5_to_level3test\M1_lfseg_2_MNI.img']);
+[filename,pathname]=uigetfile({'*.dcm'},'choose any dcm file');
+cd(pathname);
+[hdr,filetype,fileprefix,machine] = load_nii_hdr(filename);
 [img,hdr] = load_nii_img(hdr,filetype,fileprefix,machine);
 % img1=double(img);
 % img2=imrotate(img1,180);
