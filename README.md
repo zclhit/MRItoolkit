@@ -47,3 +47,6 @@ Change the information of ROIs in JHU T1 286 images into level3, which compact t
 
 15.ppg_peakdetect.m
 PPGsorting programme of GongPing
+
+16.ImgROIselection.m
+Select all the ROIs in segmented T1 image and save their location (x,y,z) in txt files.
