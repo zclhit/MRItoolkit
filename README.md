@@ -1,7 +1,7 @@
 # MRItoolkit
 A series of MATLAB program which can accelerate the processing of MR images.
 
-Attention! To use those toolkit, an MATLAB toolbox name NIfTI should be set as a path of MATLAB software.£¨NIfTI_20140122 folder is the toolbox for you£©
+Attention! To use those toolkit, an MATLAB toolbox name NIfTI should be set as a path of MATLAB software.Â£Â¨NIfTI_20140122 folder is the toolbox for youÂ£Â©
 
 1.Auto_T1_T2_DWI_selection.m 
 Classify the raw MRI data into T1, T2 and DWI by the information of raw data.
@@ -50,3 +50,13 @@ PPGsorting programme of GongPing
 
 16.ImgROIselection.m
 Select all the ROIs in segmented T1 image and save their location (x,y,z) in txt files.
+
+#BrainNetViewer\JHU_level3_53.node
+##Install
+This node is defined as a new node information can be input in the [BrainNetViewer](http://www.nitrc.org/projects/bnv/), which is a common used toolbox in MATLAB to visualize the Brain Graph. This node file derived from the brain paracellation result of Johns Hopkins University one lab's result can set in level3 which has 53 brain regions. To install this node file, just place it anywhere you want then load it in the BrainNetViewer.
+##Screenshot
+![Screenshot 1](https://raw.githubusercontent.com/ChangleZhang/MRItoolkit/master/pics/node_image1.png)
+![Screenshot 2](https://raw.githubusercontent.com/ChangleZhang/MRItoolkit/master/pics/node_image2.png)
+![Screenshot 3](https://raw.githubusercontent.com/ChangleZhang/MRItoolkit/master/pics/node_image3.png)
+![Screenshot 4](https://raw.githubusercontent.com/ChangleZhang/MRItoolkit/master/pics/edge_image1.png)
+![Screenshot 5](https://raw.githubusercontent.com/ChangleZhang/MRItoolkit/master/pics/edge_image2.png)
