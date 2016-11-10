@@ -6,7 +6,7 @@ clear all;
 close all;  %initialization
 %cd 'F:\ADNI_AD\ADT1SEG\AD16\output'
 % name='Zhuxiaolan';
-[filename,pathname]=uigetfile({'*.dcm'},'choose any dcm file');
+[filename,pathname]=uigetfile({'*.*'},'choose any dcm file');
 cd(pathname);
 [hdr,filetype,fileprefix,machine] = load_nii_hdr(filename);
 [img,hdr] = load_nii_img(hdr,filetype,fileprefix,machine);
@@ -537,4 +537,4 @@ end
 CC_286_L=make_ana(img);     %savemat
 
 %cd(['H:\DTI_file\',name,'\fiber']) %自行更改路径
-save_untouch_nii(CC_286_L,'M1_lfseg_2_MNI_level3');%save_untouch_nii(CC_286_R,'CC_286_R');
+save_untouch_nii(CC_286_L,'13M1_lfseg_2_MNI_level3');%save_untouch_nii(CC_286_R,'CC_286_R');
