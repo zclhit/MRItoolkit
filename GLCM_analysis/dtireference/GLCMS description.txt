@@ -1,0 +1,59 @@
+Description	
+The GLCMs are stored in a i x j x n matrix, where n is the number of GLCMs calculated usually due to the different orientation and displacements used in the algorithm. Usually the values i and j are equal to 'NumLevels' parameter of the GLCM computing function graycomatrix(). Note that matlab quantization values belong to the set {1,..., NumLevels} and not from {0,...,(NumLevels-1)} as provided in some references 
+http://www.mathworks.com/help/images/ref/graycomatrix.html
+
+Although there is a function graycoprops() in Matlab Image Processing Toolbox that computes four parameters Contrast, Correlation, Energy, and Homogeneity. The paper by Haralick suggests a few more parameters that are also computed here. The code is not vectorized and hence is not an efficient implementation but it is easy to add new features based on the GLCM using this code. The code takes care of 3 dimensional glcms (multiple glcms in a single 3D array)
+
+If you find that the values obtained are different from what you expect or if you think there is a different formula that needs to be used from the ones used in this code please let me know. A few questions which I have are listed in the link http://www.mathworks.com/matlabcentral/newsreader/view_thread/239608
+
+I plan to submit a vectorized version of the code later and provide updates based on replies to the above link and this initial code.
+
+% Features computed 
+% Autocorrelation: [2] (out.autoc) 
+% Contrast: matlab/[1,2] (out.contr) 
+% Correlation: matlab (out.corrm) 
+% Correlation: [1,2] (out.corrp) 
+% Cluster Prominence: [2] (out.cprom) 
+% Cluster Shade: [2] (out.cshad) 
+% Dissimilarity: [2] (out.dissi) 
+% Energy: matlab / [1,2] (out.energ) 
+% Entropy: [2] (out.entro) 
+% Homogeneity: matlab (out.homom) 
+% Homogeneity: [2] (out.homop) 
+% Maximum probability: [2] (out.maxpr) 
+% Sum of sqaures: Variance [1] (out.sosvh) 
+% Sum average [1] (out.savgh) 
+% Sum variance [1] (out.svarh) 
+% Sum entropy [1] (out.senth) 
+% Difference variance [1] (out.dvarh) 
+% Difference entropy [1] (out.denth) 
+% Information measure of correlation1 [1] (out.inf1h) 
+% Informaiton measure of correlation2 [1] (out.inf2h) 
+% Inverse difference (INV) is homom [3] (out.homom) 
+% Inverse difference normalized (INN) [3] (out.indnc) 
+% Inverse difference moment normalized [3](out.idmnc)
+
+Haralick uses 'Symmetric' = true in computing the glcm. There is no Symmetric flag in the Matlab version I use hence I add the diagonally opposite pairs to obtain the Haralick glcm. Here it is assumed that the diagonally opposite orientations are paired one after the other in the matrix. If the above assumption is true with respect to the input glcm then setting the flag 'pairs' to 1 will compute the final glcms that would result by setting 'Symmetric' to true. If your glcm is computed using the 
+Matlab version with 'Symmetric' flag you can set the flag 'pairs' to 0
+
+% References: 
+1. R. M. Haralick, K. Shanmugam, and I. Dinstein, Textural Features of Image Classification, IEEE Transactions on Systems, Man and Cybernetics, vol. SMC-3, no. 6, Nov. 1973 
+2. L. Soh and C. Tsatsoulis, Texture Analysis of SAR Sea Ice Imagery Using Gray Level Co-Occurrence Matrices, IEEE Transactions on Geoscience and Remote Sensing, vol. 37, no. 2, March 1999. 
+3. D A. Clausi, An analysis of co-occurrence texture statistics as a 
+function of grey level quantization, Can. J. Remote Sensing, vol. 28, no.1, pp. 45-62, 2002 
+4. http://murphylab.web.cmu.edu/publications/boland/boland_node26.html
+
+% Example: 
+% Usage is similar to graycoprops() but needs extra parameter 'pairs' apart from the GLCM as input
+
+>I = imread('circuit.tif'); 
+>GLCM2 = graycomatrix(I,'Offset',[2 0;0 2]); 
+>stats = GLCM_features1(GLCM2,0)
+
+The output is a structure containing all the features calculated from the different GLCMs
+
+Acknowledgements	
+This file inspired Glcm Features(Glcm).
+
+Required Products	Image Processing Toolbox
+MATLAB release	MATLAB 7.0.1 (R14SP1)

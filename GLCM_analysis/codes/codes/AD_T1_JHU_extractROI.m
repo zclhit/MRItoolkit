@@ -1,0 +1,11 @@
+clc;
+clear;
+[hdr,filetype,fileprefix,machine] = load_nii_hdr('E:\biomedical signal\0306_atlas_DICE\286L\a13_800001NC_286L.hdr');
+[seg,hdr] = load_nii_img(hdr,filetype,fileprefix,machine);
+seg=double(seg);
+[a,b,c]=size(seg);
+slice=34;
+loc=find(seg==83|seg==84);
+volume=numel(loc);
+mask=zeros(a,b,c);
+mask(loc)=1;

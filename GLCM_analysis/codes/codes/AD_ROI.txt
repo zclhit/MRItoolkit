@@ -1,0 +1,27 @@
+Hippocampus 75 76 282 284
+splenium of corpus callosum 127 128
+Genu of corpus callosum left 123 124
+Parietal_R 24 28 30 32 34
+Temporal_L 35 37 39 41 43
+Occipital_L 51 53 55 57 59
+Occipital_R 52 54 56 58 60
+Insula_L 71
+Insula_R 72
+GP_L globus pallidus left 81
+Thalamus_L 83
+Thalamus_R 84
+FrontalLateralVentricle_L 171
+PosteriorLateralVentricle_L 173 174
+InferiorLateralVentricle_R 180
+FrontalLateralVentricle_R 176
+PosteriorLateralVentricle_R 178 179
+PeripheralFrontalWM_L 186 188 190 192 194 196 198 200 202 204 206 210
+PeripheralFrontalWM_R 187 189 191 193 195 197 199 201 203 205 207 211
+PeripheralParietalWM_L 155 208 212 214 216 218
+PeripheralParietalWM_R 156 209 213 215 217 219
+PeripheralTemporalWM_L 220 222 224 226 228 230
+ALIC 131 132
+PLIC 133 134
+Caud 77 78
+Thal 83 84
+Ventrical 171 172 173 174 175 176 177 178 179 180 181 285 286
