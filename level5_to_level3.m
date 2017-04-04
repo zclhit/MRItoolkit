@@ -537,4 +537,4 @@ end
 CC_286_L=make_ana(img);     %savemat
 
 %cd(['H:\DTI_file\',name,'\fiber']) %自行更改路径
-save_untouch_nii(CC_286_L,'13M1_lfseg_2_MNI_level3');%save_untouch_nii(CC_286_R,'CC_286_R');
+save_untouch_nii(CC_286_L,'NC02_Seg_level3');%save_untouch_nii(CC_286_R,'CC_286_R');
