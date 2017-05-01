@@ -1,6 +1,6 @@
 %function:统计一个目录下所有分割结果中283个脑区的ROI大小，放到一个txt文档中
 clc;clear all;close all;
-pathname_G1 = 'J:\XuanWu\M2_PD分割';
+pathname_G1 = 'I:\NC30';
 cd(pathname_G1);
 dirs_G1=dir([pathname_G1, '\*.*']);
 dircell_G1=struct2cell(dirs_G1)' ;

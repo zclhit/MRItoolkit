@@ -319,7 +319,7 @@ for t=temp1
 end
 img(index)=temp1(1);
 
-%optical_L:
+%occipital_L:
 temp1=[51:2:59]; %label number
 index=(img==temp1(1)); %index是图像中对应label number的体素序号
 for t=temp1
@@ -328,7 +328,7 @@ for t=temp1
 end
 img(index)=temp1(1);
 
-%optical_R:
+%occipital_R:
 temp1=[52:2:60]; %label number
 index=(img==temp1(1)); %index是图像中对应label number的体素序号
 for t=temp1
