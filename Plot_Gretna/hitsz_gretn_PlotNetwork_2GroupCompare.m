@@ -10,10 +10,10 @@ clear
 num_G=2;
 
 %分别确定G1与G2的Network Analysis网络参数txt的文件位置
-pathname_G1 = 'G:\韩璎课题组数据\SCD-NC\1SCD_network';
-pathname_G2 = 'G:\韩璎课题组数据\SCD-NC\NC_network';
+pathname_G1 = 'G:\玄武医院数据\M2图论分析\AD';
+pathname_G2 = 'G:\玄武医院数据\M2图论分析\NC';
 pathname_G3 = 'G:\韩璎课题组数据\SCD-NC\Result_path';
-pathname_P='G:\韩璎课题组数据\SCD-NC\P_value';
+pathname_P='G:\玄武医院数据\M2图论分析\p_val';
 
 % 读取G1的数据       
 dirs_G1=dir([pathname_G1, '\*.txt']);
