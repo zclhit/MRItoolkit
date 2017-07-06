@@ -96,7 +96,7 @@ for m=1:length(filenames_G1)
             end
             
             CC_286_L=make_ana(img);     %savemat
-            savename = strcat(floder_name,'_M2_MNI_level3');
+            savename = strcat(floder_name,'_M2_MNI_level3_type2');
             save_untouch_nii(CC_286_L,savename);
             cd(path);    
         end
