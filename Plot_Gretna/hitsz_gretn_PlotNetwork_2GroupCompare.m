@@ -10,10 +10,10 @@ clear
 num_G=2;
 
 %分别确定G1与G2的Network Analysis网络参数txt的文件位置
-pathname_G1 = 'G:\玄武医院数据\M2图论分析\AD';
-pathname_G2 = 'G:\玄武医院数据\M2图论分析\NC';
+pathname_G1 = 'G:\玄武医院数据\level4下的gretna分析结果\pd-nc\nc_fa_135';
+pathname_G2 = 'G:\玄武医院数据\level4下的gretna分析结果\pd-nc\pd_fa_135';
 pathname_G3 = 'G:\韩璎课题组数据\SCD-NC\Result_path';
-pathname_P='G:\玄武医院数据\M2图论分析\p_val';
+pathname_P='G:\玄武医院数据\level4下的gretna分析结果\pd-nc\p_val';
 
 % 读取G1的数据       
 dirs_G1=dir([pathname_G1, '\*.txt']);
@@ -44,8 +44,13 @@ file_path_P=fullfile(pathname_P,filenames_P); %保存各网络参数的全路径
 
 % 调用PlotNetwork函数画图并保存
 for i=1:length(filenames_P)
+
     G1=load(char(file_path_G1(i)));
     G2=load(char(file_path_G2(i)));
+    index1= find(G1>100000);
+    G1(index1) = 0;
+    index2 = find(G2>100000);
+    G2(index2) = 0;
     Pvalue=load(char(file_path_P(i)));
     if num_G==3
         G3=load(char(file_path_G3(i)));
@@ -55,6 +60,7 @@ for i=1:length(filenames_P)
     end
     savename=char(filenames_P(i));
     savename(end-3:end)=[]; % 去掉文件名中的“.txt”
+    disp(savename);
     print(y, '-dpng', savename); % 保存网络参数图于当前目录
     close gcf
    

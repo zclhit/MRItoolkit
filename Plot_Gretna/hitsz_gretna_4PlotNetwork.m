@@ -5,7 +5,7 @@
 
 
 
-function y=hitsz_gretna_4PlotNetwork(Pvalue,G1,G2,G3,G4)
+function y=hitsz_gretna_4PlotNetwork(G1,G2,G3,G4)
 
 %读取文件 (测试AUC文件)
 % G1=load('H:\JMRI\output_NetworkAnalysis\G1\Results_NetworkSmallWorld\aEg.txt');
@@ -33,13 +33,11 @@ if nargin==3
         errorbar(0.5,meanG1,stdG1,'rx');hold on;
         errorbar(0.6,meanG2,stdG2,'bx');hold on;
         %画P值标记
-        if Pvalue <0.05
-            plot(0.55,max(meanG1,meanG2)+max(stdG1,stdG2),'*','MarkerFaceColor','k');
-        end
+       
         
     else
         %如果Pvalue文件维度等于阈值坐标维度，则画阈值图
-        if size(Pvalue,1)==length(Xaxis)
+        if length(Xaxis)==36
             plot(Xaxis,meanG1,'o-','color','r');hold on;
             plot(Xaxis,meanG2,'v-','color','b');hold on;
             legend('G1','G2');
@@ -90,7 +88,7 @@ else
         errorbar(0.5,meanG1,stdG1,'rx');hold on;
         errorbar(0.6,meanG2,stdG2,'bx');hold on;
         errorbar(0.7,meanG3,stdG3,'gx');hold on;
-        errorbar(0.7,meanG4,stdG4,'gx');hold on;
+        errorbar(0.4,meanG4,stdG4,'kx');hold on;
         legend('SCD','aMCI','AD','NC');
         %画P值标记
 %         if Pvalue <0.05
@@ -99,11 +97,11 @@ else
         
     else
         %如果Pvalue文件维度等于阈值坐标维度，则画阈值图
-        if size(Pvalue,1)==length(Xaxis)
+        if length(meanG1)==36
             plot(Xaxis,meanG1,'o-','color','r');hold on;
             plot(Xaxis,meanG2,'v-','color','b');hold on;
             plot(Xaxis,meanG3,'s-','color','g');hold on;
-            plot(Xaxis,meanG4,'g-','color','k');hold on;
+            plot(Xaxis,meanG4,'^-','color','k');hold on;
             legend('SCD','aMCI','AD','NC');
             errorbar(Xaxis,meanG1,stdG1,'r');hold on;
             errorbar(Xaxis,meanG2,stdG2,'b');hold on;
@@ -125,7 +123,7 @@ else
             plot(meanG1,'o-','color','r');hold on;
             plot(meanG2,'v-','color','b');hold on;
             plot(meanG3,'s-','color','g');hold on;
-            plot(meanG4,'g-','color','k');hold on;
+            plot(meanG4,'^-','color','k');hold on;
             legend('SCD','aMCI','AD','NC');
             errorbar(meanG1,stdG1,'r');hold on;
             errorbar(meanG2,stdG2,'b');hold on;

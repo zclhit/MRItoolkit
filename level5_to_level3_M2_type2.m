@@ -43,7 +43,7 @@ for z=283:-1:1
     end
 end
 %开始进行回溯
-path = 'G:\深圳人民医院\朱进医生\分割结果_M2';
+path = 'G:\玄武医院数据\韩璎课题组数据\SCD\SCD_M2分割';
 cd(path)
 dirs_G1=dir([path, '\*.*']);
 dircell_G1=struct2cell(dirs_G1)' ;

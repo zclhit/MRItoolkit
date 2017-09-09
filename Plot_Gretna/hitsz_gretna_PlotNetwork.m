@@ -23,6 +23,7 @@ function y=hitsz_gretna_PlotNetwork(Pvalue,G1,G2,G3)
 % Pvalue=load('H:\JMRI\output_NetworkComp_withoutCor\anodalCp_All_Node_P.txt');
 
 % 如果组别不包含有G3
+
 if nargin==3
     meanG1=mean(G1); stdG1=std(G1);%求G1组均值与标准差
     meanG2=mean(G2);  stdG2=std(G2);%求G2组均值与标准差
