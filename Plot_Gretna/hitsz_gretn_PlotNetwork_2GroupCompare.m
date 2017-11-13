@@ -10,10 +10,10 @@ clear
 num_G=2;
 
 %分别确定G1与G2的Network Analysis网络参数txt的文件位置
-pathname_G1 = 'G:\玄武医院数据\level4下的gretna分析结果\pd-nc\nc_fa_135';
-pathname_G2 = 'G:\玄武医院数据\level4下的gretna分析结果\pd-nc\pd_fa_135';
+pathname_G1 = 'G:\玄武医院数据\2017_10_01PD_NC_XXG\NCnetwork';
+pathname_G2 = 'G:\玄武医院数据\2017_10_01PD_NC_XXG\xiaoxueguanNETWORK';
 pathname_G3 = 'G:\韩璎课题组数据\SCD-NC\Result_path';
-pathname_P='G:\玄武医院数据\level4下的gretna分析结果\pd-nc\p_val';
+pathname_P='G:\玄武医院数据\2017_10_01PD_NC_XXG\xiaoxueguan_NC';
 
 % 读取G1的数据       
 dirs_G1=dir([pathname_G1, '\*.txt']);
