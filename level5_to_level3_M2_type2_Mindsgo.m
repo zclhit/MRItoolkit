@@ -1,14 +1,16 @@
 %This programme trace back ROI information based on M2 segmention via a
 %lookuptable.this programme can also generate a new lookuptable.
+%This version of programme aims at brainlabels segmentation system
+%BrainLabels: www.mindsgo.com
 %Author: Challen zhangchanglehit@163.com
-%Date: Jun-14th-2017
+%Date: Nov-12th-2017
 clc;
 clear all;
 close all;
 
 load('M2lookuptable.mat'); %para named 'a'
 
-b = a(:,9);
+b = a(:,9);%whole name of level3 regions (with duplication)
 hashset = unique(b);
 
 res = a;
@@ -42,8 +44,8 @@ for z=283:-1:1
         cnt=cnt-1;
     end
 end
-%开始进行回溯
-path = 'G:\玄武医院数据\Image_Out\画图分割结果';
+%Track back Started
+path = 'G:\玄武医院数据\PD\PD公司分割结果\PD2\UnZip';%folder of unziped files
 cd(path)
 dirs_G1=dir([path, '\*.*']);
 dircell_G1=struct2cell(dirs_G1)' ;
@@ -52,7 +54,7 @@ for m=1:length(filenames_G1)
     floder_name = char(filenames_G1(m));
     cd(floder_name);
     disp(floder_name);
-    cd('output');
+    %cd('output');
     dirs_G2=dir;
     dircell_G2=struct2cell(dirs_G2)' ;
     filenames_G2=dircell_G2(3:length(dircell_G2),1);
